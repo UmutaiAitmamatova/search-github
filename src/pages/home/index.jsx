@@ -1,9 +1,7 @@
-import React from 'react'
-import Header from '../../layout/Header'
-
+import React from 'react';
 function Home() {
     return (
-        <div>
+        <div style={{minHeight: 'calc(100vh - 120px)'}}>
             hello
         </div>
     )

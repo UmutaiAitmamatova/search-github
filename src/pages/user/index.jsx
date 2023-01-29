@@ -2,7 +2,7 @@ import React from 'react'
 
 function User() {
     return (
-        <div>User</div>
+        <div style={{minHeight: 'calc(100vh - 120px)'}}>User</div>
     )
 }
 

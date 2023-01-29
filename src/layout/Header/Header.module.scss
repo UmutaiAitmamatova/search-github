@@ -1,0 +1,51 @@
+header{
+    background-color: #12161B;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.block{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right{
+    width: 30%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+}
+.right input{
+    width: 80%;
+    height: 25px;
+    margin-left: 10px;
+    border: 1.5px solid #363A3D;
+    border-radius: 5px;
+    background-color: #0A0E12;
+    color: #d8d8d2;
+    padding: 0 15px;
+}
+.right input:hover{
+    border: none;
+}
+.left{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drop{
+    display: flex;
+    align-items: center;
+}
+.img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+//button 1C6B2B
+// input 0A0E12
+// repazitori 0A0E12

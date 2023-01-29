@@ -1,0 +1,38 @@
+:root{
+    --gap: 1em;
+    --index: calc(1vw + 1vh);
+    --color-dark: #000;
+}
+.UserInfo{
+    padding: 20px;
+    height: calc(var(--index) * 25);
+    width: calc(var(--index) * 18);
+    // border: 1px solid red;
+}
+.img{
+    // margin: 0 auto;
+    background-color: #fff;
+    height: calc(var(--index) * 15);
+    width: calc(var(--index) * 15);
+    border-radius: 50%;
+}
+.nickname{
+    margin-top: 10px;
+    font-weight: 700;
+    color: #A1A7AE;
+    font-size: calc(var(--index) * 1.3);
+}
+.fullname{
+    margin-top: 6px;
+    color: #8B949C;
+    font-size: calc(var(--index) * 1.1);
+}
+.follow{
+    display: flex;
+    color: #8B949C;
+    margin-top: 10px;
+}
+span{
+    color: #fff;
+    padding-left: 10px;
+}

@@ -5,3 +5,11 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 60%;
+    margin-top: 20px;
+}

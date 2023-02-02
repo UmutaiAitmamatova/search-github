@@ -2,7 +2,8 @@ import React from 'react';
 import Filters from '../Filters';
 import Repositories from '../Repositories';
 import UserInfo from '../UserInfo';
-import classes from './MyPage.module.scss'
+import classes from './MyPage.module.scss';
+// import { getUserCard } from './api.js';
 
 function MyPage() {
   return (

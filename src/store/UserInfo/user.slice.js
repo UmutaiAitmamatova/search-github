@@ -13,3 +13,5 @@ export const userInfoSlice = createSlice({
         })
     }
 })
+
+export const userInfoReducer = userInfoSlice.reducer;

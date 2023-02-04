@@ -10,15 +10,14 @@ const MyPage = () => {
   const { userRepositories } = useSelector((state) => state.userRepos);
   console.log('userRepositories', userRepositories);
 
-  useEffect(() => {
-    dispatch(getUserReposThunk());
-  }, [dispatch]);
-  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userInfoThunk());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getUserReposThunk());
+  }, [dispatch]);
 
 
   return (

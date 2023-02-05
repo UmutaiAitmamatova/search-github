@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './Repositories.module.scss';
 
-function Repositories({ language, title }) {
+function Repositories({ repos }) {
   return (
     <div className={classes.repositories}>
-        <p className={classes.title}>{title}</p>
-        <p className={classes.language}>{language}</p>
+        <p className={classes.title}>{repos.name}</p>
+        <p className={classes.language}>{repos.language}</p>
     </div>
   )
 }

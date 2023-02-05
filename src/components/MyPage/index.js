@@ -7,8 +7,8 @@ import { getUserReposThunk, userInfoThunk } from "../../api/UserInfo/user.thunk"
 import UserInfo from "../UserInfo";
 
 const MyPage = () => {
-  const { userRepositories } = useSelector((state) => state.userRepos);
-  console.log('userRepositories', userRepositories);
+  const { userRepos } = useSelector((state) => state.userRepos);
+  console.log('userRepositories', userRepos);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -31,10 +31,16 @@ const MyPage = () => {
           <div className={classes.left}>
             <h2>Repositories</h2>
             <Filters />
-            <Repositories title="mypage" language="HTML" />
-            <Repositories title="search-github" language="JavaScript" />
-            <Repositories title="todo-system" language="JavaScript" />
-            <Repositories title="admin-panel" language="JavaScript" />
+            
+            {userRepos.length > 0 && (
+              <div className={classes.repos}>
+                {userRepos.map((repos, index) => (
+                  <Repositories key={index} repos={repos} />
+                ))}
+              </div>
+            )}
+
+
           </div>
         </div>
       </div>

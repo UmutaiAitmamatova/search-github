@@ -1,11 +1,8 @@
 import React from "react";
 import classes from "./UserInfo.module.scss";
-import { useSelector } from "react-redux";
+import { HiOutlineLocationMarker } from 'react-icons/hi'
 
-function UserInfo() {
-  const { userInfoo } = useSelector((state) => state.userInfo);
-  // console.log('userInfoo', userInfoo);
-
+function UserInfo({userInfoo}) {
   return (
     <div className={classes.UserInfo}>
       <div>
@@ -19,14 +16,18 @@ function UserInfo() {
       <div className={classes.fullname}>{userInfoo.login}</div>
       <div className={classes.follow}>
         <div className={classes.followers}>
-
           <span>{userInfoo.followers}</span> followers
         </div>
-        <div className={classes.following}>
 
+        <div className={classes.following}>
           <span>{userInfoo.following}</span> following
         </div>
       </div>
+
+      <div className={classes.location}>
+          <HiOutlineLocationMarker size={20}/> <span>{userInfoo.location}</span>
+        </div>
+
     </div>
   );
 }

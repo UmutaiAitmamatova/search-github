@@ -1,6 +1,3 @@
-.MyPage{
-
-}
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -12,4 +9,17 @@
 .left{
     width: 60%;
     margin-top: 20px;
+}
+.page{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #363A3D;
+    padding-bottom: 20px;
+
+}
+.repositories{
+    color: #A1A7AE;
+    font-size: 18px;
+    text-decoration: none;
 }

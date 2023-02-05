@@ -1,13 +1,25 @@
-import React from 'react';
-import classes from './Repositories.module.scss';
+import React from 'react'
+import { useSelector } from 'react-redux';
+import Repository from '../common/Repository';
+import Filters from '../Filters'
 
-function Repositories({ repos }) {
-  return (
-    <div className={classes.repositories}>
-        <p className={classes.title}>{repos.name}</p>
-        <p className={classes.language}>{repos.language}</p>
-    </div>
-  )
+function Repositories() {
+    const { userRepos } = useSelector((state) => state.userRepos);
+    console.log('userRepos', userRepos);
+    return (
+        <div>
+            <Filters />
+
+            {userRepos.length > 0 && (
+                <div>
+                    {userRepos.map((repos, index) => (
+                        <Repository key={index} repos={repos} />
+                    ))}
+                </div>
+            )}
+
+        </div>
+    )
 }
 
-export default Repositories;
+export default Repositories

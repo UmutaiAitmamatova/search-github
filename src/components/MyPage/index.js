@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
-import Filters from "../Filters";
-import Repositories from "../Repositories";
+import { Outlet } from 'react-router-dom'
 import classes from "./MyPage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserReposThunk, userInfoThunk } from "../../api/UserInfo/user.thunk";
 import UserInfo from "../UserInfo";
+import { Link } from "react-router-dom";
+import { RiGitRepositoryLine } from 'react-icons/ri'
+import { AiOutlineStar } from 'react-icons/ai'
+import { SlUserFollowing } from 'react-icons/sl'
 
 const MyPage = () => {
-  const { userRepos } = useSelector((state) => state.userRepos);
-  console.log('userRepositories', userRepos);
+  const { userInfoo } = useSelector((state) => state.userInfo);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,22 +27,17 @@ const MyPage = () => {
       <div className={classes.container}>
         <div className={classes.content}>
           <div className={classes.right}>
-            <UserInfo />
+            <UserInfo userInfoo={userInfoo} />
           </div>
 
           <div className={classes.left}>
-            <h2>Repositories</h2>
-            <Filters />
-            
-            {userRepos.length > 0 && (
-              <div className={classes.repos}>
-                {userRepos.map((repos, index) => (
-                  <Repositories key={index} repos={repos} />
-                ))}
-              </div>
-            )}
-
-
+            <div className={classes.page}>
+              <Link to='repos'><div className={classes.repositories}><RiGitRepositoryLine/>Repositories</div></Link>
+              <Link to='star'><div className={classes.repositories}><AiOutlineStar/>Star</div></Link>
+              <Link to='following'><div className={classes.repositories}><SlUserFollowing/>following</div></Link>
+              <Link to='follower'><div className={classes.repositories}><SlUserFollowing/>follower</div></Link>
+            </div>
+            <Outlet />
           </div>
         </div>
       </div>

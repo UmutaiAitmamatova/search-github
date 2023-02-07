@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {myFollowersReducer, myFollowingReducer, userInfoReducer, userPeposReducer} from '../api/UserInfo/user.slice'
+import {myFollowersReducer, myFollowingReducer, myStarReposReducer, userInfoReducer, userPeposReducer} from '../api/UserInfo/user.slice'
 
 export const store = configureStore({ 
     reducer: {
@@ -7,6 +7,7 @@ export const store = configureStore({
         userRepos: userPeposReducer,
         myFollowing: myFollowingReducer,
         myFollowers: myFollowersReducer,
+        myStarRepos: myStarReposReducer,
     } 
 })
 

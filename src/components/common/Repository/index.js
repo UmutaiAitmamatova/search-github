@@ -1,16 +1,16 @@
 import React from 'react';
 import classes from './Repository.module.scss';
 
-function Repository({ repos }) {
+function Repository({ name, language, updated_at, visibility }) {
   return (
     <div className={classes.repositories}>
         <div>
-          <p className={classes.title}>{repos.name}</p>
-          <p className={classes.language}>{repos.language}</p>
+          <p className={classes.title}>{name}</p>
+          <p className={classes.language}>{language}</p>
         </div>
         <div>
-          <p className={classes.visibility}>{repos.visibility}</p>
-          <p className={classes.language}>{repos.updated_at}</p>
+          <p className={classes.visibility}>{visibility}</p>
+          <p className={classes.language}>{updated_at}</p>
         </div>
     </div>
   )

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFollowersThunk, getFollowingThunk, getUserReposThunk, userInfoThunk } from "./user.thunk";
+import { getFollowersThunk, getFollowingThunk, getMyStarReposThunk, getUserReposThunk, userInfoThunk } from "./user.thunk";
 
 export const userInfoSlice = createSlice({
   name: "userInfo",
@@ -56,7 +56,21 @@ export const myFollowersSlice = createSlice({
   },
 });
 
+export const myStarReposSlice = createSlice({
+  name: "myStarRepos",
+  initialState: {
+    myStarRepos: {},
+  },
+  reducers: {},
+  extraReducers(builder) {
+    builder.addCase(getMyStarReposThunk.fulfilled, (state, action) => {
+      state.myStarRepos = action.payload;
+    });
+  },
+});
+
 export const userInfoReducer = userInfoSlice.reducer;
 export const myFollowingReducer = myFollowingSlice.reducer;
 export const myFollowersReducer = myFollowersSlice.reducer;
+export const myStarReposReducer = myStarReposSlice.reducer;
 export const userPeposReducer = userReposSlice.reducer;

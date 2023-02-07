@@ -5,19 +5,22 @@ import Filters from '../Filters'
 
 function Repositories() {
     const { userRepos } = useSelector((state) => state.userRepos);
-    console.log('userRepos', userRepos);
     return (
         <div>
             <Filters />
-
             {userRepos.length > 0 && (
                 <div>
                     {userRepos.map((repos, index) => (
-                        <Repository key={index} repos={repos} />
+                        <Repository 
+                            key={index} 
+                            name={repos.name}
+                            language={repos.language}
+                            updated_at={repos.updated_at} 
+                            visibility={repos.visibility}
+                            />
                     ))}
                 </div>
             )}
-
         </div>
     )
 }

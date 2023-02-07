@@ -14,15 +14,6 @@ function UserInfo({userInfoo}) {
       </div>
       <div className={classes.nickname}>{userInfoo.name}</div>
       <div className={classes.fullname}>{userInfoo.login}</div>
-      <div className={classes.follow}>
-        <div className={classes.followers}>
-          <span>{userInfoo.followers}</span> followers
-        </div>
-
-        <div className={classes.following}>
-          <span>{userInfoo.following}</span> following
-        </div>
-      </div>
 
       <div className={classes.location}>
           <HiOutlineLocationMarker size={20}/> <span>{userInfoo.location}</span>

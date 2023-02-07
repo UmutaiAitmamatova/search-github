@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getFollowersThunk,
   getFollowingThunk,
+  getMyStarReposThunk,
   getUserReposThunk,
   userInfoThunk,
 } from "../../api/UserInfo/user.thunk";
@@ -34,6 +35,10 @@ const MyPage = () => {
     dispatch(getFollowingThunk());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getMyStarReposThunk());
+  }, [dispatch]);
+
   return (
     <div className={classes.MyPage}>
       <div className={classes.container}>
@@ -56,16 +61,16 @@ const MyPage = () => {
                   <span>Star</span>
                 </div>
               </Link>
-              <Link to="following">
-                <div className={classes.repositories}>
-                  <SlUserFollowing />
-                  <span>Following</span>
-                </div>
-              </Link>
               <Link to="follower">
                 <div className={classes.repositories}>
                   <SlUserFollowing />
                   <span>Follower</span>
+                </div>
+              </Link>
+              <Link to="following">
+                <div className={classes.repositories}>
+                  <SlUserFollowing />
+                  <span>Following</span>
                 </div>
               </Link>
             </div>

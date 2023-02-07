@@ -49,3 +49,13 @@ export const getFollowersThunk = createAsyncThunk("FollowersThunk", async () => 
   }
   return response.data;
 });
+
+export const getMyStarReposThunk = createAsyncThunk("myStarReposThunk", async () => {
+  const response = await baseURL.get(
+    `/users/UmutaiAitmamatova/starred`
+  );
+  if (!response.status) {
+    throw new Error("Server error");
+  }
+  return response.data;
+});

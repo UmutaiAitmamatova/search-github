@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { getUserReposThunk } from '../api/UserInfo/user.thunk'
 import StarRepos from '../components/common/StarRepository'
+import Followers from '../components/Followers'
+import Following from '../components/Following'
 import Repositories from '../components/Repositories'
 import Footer from '../layout/Footer'
 import Header from '../layout/Header'
@@ -24,8 +26,8 @@ function Router() {
                 <Route path='/*' element={<Home />} >
                     <Route path="repos" element={<Repositories/>} />
                     <Route path="star" element={<StarRepos />} />
-                    <Route path="following" element={<p>following</p>} />
-                    <Route path="follower" element={<p>follower</p>} />
+                    <Route path="following" element={<p><Following/></p>} />
+                    <Route path="follower" element={<p><Followers/></p>} />
                 </Route>
                 <Route path='user' element={<User />} />
             </Routes>

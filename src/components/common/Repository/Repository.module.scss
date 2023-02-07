@@ -4,12 +4,14 @@
     --color-dark: #000;
 }
 .repositories{
-    padding-left: 20px;
+    padding: 0 20px;
     border-radius: 8px;
     margin: 20px 0;
     border: 1.5px solid #363A3D;
-    height: calc(var(--index) * 6);
-    width: calc(var(--index) * 30);
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
 }
 .title{
     color: #3081df;

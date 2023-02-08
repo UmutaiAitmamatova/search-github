@@ -21,7 +21,6 @@ function Router() {
     return (
         <>
             <Header/>
-
             <Routes>
                 <Route path='/*' element={<Home />} >
                     <Route path="repos" element={<Repositories/>} />
@@ -29,7 +28,12 @@ function Router() {
                     <Route path="following" element={<p><Following/></p>} />
                     <Route path="follower" element={<p><Followers/></p>} />
                 </Route>
-                <Route path='user' element={<User />} />
+                <Route path='user/*' element={<User />}>
+                    <Route path="repos" element={<Repositories/>} />
+                    <Route path="star" element={<StarRepos />} />
+                    <Route path="following" element={<p><Following/></p>} />
+                    <Route path="follower" element={<p><Followers/></p>} />
+                </Route>
             </Routes>
 
             <Footer/>

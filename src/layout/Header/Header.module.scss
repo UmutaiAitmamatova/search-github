@@ -14,11 +14,9 @@ header{
 .right{
     width: 30%;
     display: flex;
-    justify-content: space-between; 
     align-items: center;  
 }
-.right input{
-    width: 80%;
+.search input{
     height: 25px;
     margin-left: 10px;
     border: 1.5px solid #363A3D;
@@ -27,8 +25,12 @@ header{
     color: #d8d8d2;
     padding: 0 15px;
 }
-.right input:hover{
+.search input:hover{
     border: none;
+}
+.search{
+    width: 80%;
+    position: relative;
 }
 .left{
     width: 130px;

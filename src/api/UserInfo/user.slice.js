@@ -14,8 +14,6 @@ export const userInfoSlice = createSlice({
   },
 });
 
-
-
 export const userReposSlice = createSlice({
   name: "userRepos",
   userId: "",

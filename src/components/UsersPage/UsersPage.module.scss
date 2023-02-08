@@ -1,0 +1,38 @@
+.MyPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.content{
+    width: 1000px;
+    display: flex;
+}
+.left{
+    width: 50%;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.page{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #363A3D;
+    padding-bottom: 20px;
+}
+.page a{
+    text-decoration: none;
+}
+.repositories{
+    color: #A1A7AE;
+    font-size: 18px;
+    text-decoration: none;
+}
+.repositories span{
+    padding-left: 10px;
+    font-size: 16px;
+    text-decoration: none;
+}

@@ -1,5 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
-import {myFollowersReducer, myFollowingReducer, myStarReposReducer, userInfoReducer, userPeposReducer} from '../api/UserInfo/user.slice'
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import {myFollowersReducer, myFollowingReducer, myStarReposReducer, userInfoReducer, userPeposReducer} from '../api/UserInfo/user.slice';
+import searchReducer from "../api/SearchUsers/searchSlice";
 
 export const store = configureStore({ 
     reducer: {
@@ -8,7 +9,9 @@ export const store = configureStore({
         myFollowing: myFollowingReducer,
         myFollowers: myFollowersReducer,
         myStarRepos: myStarReposReducer,
-    } 
+        searchGitHubUser: searchReducer,
+    },
+    middleware: [...getDefaultMiddleware()],
 })
 
 export default store;

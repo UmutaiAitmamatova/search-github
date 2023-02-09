@@ -30,17 +30,12 @@ const slice = createSlice({
             state.userData = action.payload;
             state.loading = false;
         },
-        [searchGitHubUser.rejected]: (state, action) => {
-            state.error = action.error.message;
-            state.loading = false;
-        },
     },
 });
 
 export const { reset } = slice.actions;
 
 export const selectUserData = (state) => state.searchGitHubUser.userData;
-export const selectError = (state) => state.searchGitHubUser.error;
 export const selectLoading = (state) => state.searchGitHubUser.loading;
 
 export default slice.reducer;

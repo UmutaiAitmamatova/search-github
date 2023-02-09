@@ -12,12 +12,6 @@ import Home from '../pages/home'
 import User from '../pages/user'
 
 function Router() {
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(getUserReposThunk());
-    // }, [dispatch]);
-    
     return (
         <>
             <Header/>

@@ -10,10 +10,11 @@ import { Link } from "react-router-dom";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
+import { selectUserData } from "../../api/SearchUsers/searchSlice";
 
 const UsersPage = () => {
-  const { usersData } = useSelector((state) => state.usersData);
-  console.log('usersData', usersData);
+  const userData = useSelector(selectUserData);
+  console.log('userData', userData);
 
   return (
     <div className={classes.MyPage}>
@@ -21,10 +22,10 @@ const UsersPage = () => {
         <div className={classes.content}>
           <div className={classes.right}>
             <UserInfo
-              avatar_url={usersData.avatar_url}
-              name={usersData.name}
-              login={usersData.login}
-              location={usersData.location}
+              avatar_url={userData.avatar_url}
+              name={userData.name}
+              login={userData.login}
+              location={userData.location}
             />
           </div>
 

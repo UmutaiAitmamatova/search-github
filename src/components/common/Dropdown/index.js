@@ -7,21 +7,18 @@ const Dropdown = ({ userData }) => {
     const navigate = useNavigate()
 
     return (
-        <div className={classes.dropdown}>
-            {userData && userData.length > 0 && userData.map((item, index) => {
-                return <div onClick={() => navigate(`/users/${item.login}`)}>
+        <div>
+            <div className={classes.dropdown} onClick={() => navigate(`/user/${userData.login}`)}>
                     <BiBook />
                     <div>
                         <img
                             alt='AVATAR'
-                            src={item.avatar_url}
+                            src={userData.avatar_url}
                             className={classes.img}
                         />
                     </div>
-                    <div >{item.login}</div>
+                    <div >{userData.login}</div>
                 </div>
-            })
-            }
         </div>
     );
 };

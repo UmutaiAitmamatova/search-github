@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Dropdown from '../../components/common/Dropdown';
 import { searchGitHubUser } from "../../api/SearchUsers/searchSlice";
-import { selectUserData, selectError, selectLoading } from "../../api/SearchUsers/searchSlice";
+import { selectUserData, selectLoading } from "../../api/SearchUsers/searchSlice";
 
 function Header() {
     const dispatch = useDispatch();
@@ -40,13 +40,18 @@ function Header() {
                                 />
                                 <button type="submit">Search</button>
                             </form>
-                            <Dropdown loading={loading} userData={userData} />
+                            {userData && <Dropdown userData={userData}/>}
+                            {/* {userData && userData.map((item, index) => {
+                                return <Dropdown key={index} item={item}/>
+                            })
+                            } */}
+                            
                         </div>
                     </div>
                     <div className={classes.left}>
                         <div><MdNotificationsNone size={22} /></div>
                         <div className={classes.drop}><div><AiOutlinePlus /></div> <MdArrowDropDown /></div>
-                        <Link to='user'><div className={classes.drop}> <div> <img src={userInfoo.avatar_url} alt="AVATAR" className={classes.img} /> </div> <MdArrowDropDown /> </div></Link>
+                        <Link to='/'><div className={classes.drop}> <div> <img src={userInfoo.avatar_url} alt="AVATAR" className={classes.img} /> </div> <MdArrowDropDown /> </div></Link>
                     </div>
                 </div>
             </div>
@@ -55,49 +60,3 @@ function Header() {
 }
 
 export default Header
-
-
-// import React, { useState, useEffect } from "react";
-
-// const Search = () => {
-//   const [username, setUsername] = useState("");
-//   const [userData, setUserData] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await fetch(
-//         `https://api.github.com/users/${username}`
-//       );
-//       const data = await response.json();
-//       setUserData(data);
-//     } catch (err) {
-//       setError(err);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="Enter GitHub username"
-//           value={username}
-//           onChange={(e) => setUsername(e.target.value)}
-//         />
-//         <button type="submit">Search</button>
-//       </form>
-//       {error && <div>Error: {error.message}</div>}
-//       {userData && (
-//         <div>
-//           <img src={userData.avatar_url} alt="avatar" />
-//           <h3>{userData.name}</h3>
-//           <p>Followers: {userData.followers}</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Search;

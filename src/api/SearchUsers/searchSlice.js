@@ -4,7 +4,7 @@ import https from "../https";
 export const searchGitHubUser = createAsyncThunk(
     "searchGitHubUser",
     async (username) => {
-        const response = await https.get(`/users/${username}`);
+        const response = await https.get(`/search/users?q=${username}`);
         return response.data;
     }
 );
@@ -13,7 +13,6 @@ const slice = createSlice({
     name: "searchGitHubUser",
     initialState: {
         userData: null,
-        error: null,
         loading: false,
     },
     reducers: {

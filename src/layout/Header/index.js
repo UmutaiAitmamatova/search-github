@@ -40,12 +40,7 @@ function Header() {
                                 />
                                 <button type="submit">Search</button>
                             </form>
-                            {userData && <Dropdown userData={userData}/>}
-                            {/* {userData && userData.map((item, index) => {
-                                return <Dropdown key={index} item={item}/>
-                            })
-                            } */}
-                            
+                            {userData && <Dropdown userData={userData.items}/>}
                         </div>
                     </div>
                     <div className={classes.left}>

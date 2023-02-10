@@ -31,6 +31,7 @@ header{
 .search{
     width: 80%;
     position: relative;
+    display: inline-block;
 }
 .left{
     width: 130px;
@@ -46,6 +47,10 @@ header{
     width: 45px;
     border-radius: 50%;
 }
+// .dropdown{
+//     display: flex;
+
+// }
 //button 1C6B2B
 // input 0A0E12
 // repazitori 0A0E12

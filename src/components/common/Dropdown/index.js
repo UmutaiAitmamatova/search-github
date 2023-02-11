@@ -13,10 +13,11 @@ const Dropdown = ({ userData, setIsActive }) => {
         <div className={classes.dropdown}>
             {userData.length > 0 && userData.map((item) => {
                 return (
-                    <div className={classes.content} onClick={(e) => {
+                    <div className={classes.content} onClick={() => {
                         navigate(`/user/${item.login}`)
-                        e.preventDefault();
+                        console.log('item.login', item.login);
                         setIsActive(false)
+                        dispatch(selectUserInfo(item.login));
                     }}>
                         <BiBook />
                         <div>

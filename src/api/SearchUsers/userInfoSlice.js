@@ -12,20 +12,15 @@ export const searchUserInfo = createAsyncThunk(
 const userInfoSlice = createSlice({
     name: "searchUserInfo",
     initialState: {
-        userInfo: null,
+        usersInfo: null,
         loading: false,
-    },
-    reducers: {
-        reset: (state) => {
-            state.userInfo = null;
-        },
     },
     extraReducers: {
         [searchUserInfo.pending]: (state) => {
             state.loading = true;
         },
         [searchUserInfo.fulfilled]: (state, action) => {
-            state.userInfo = action.payload;
+            state.usersInfo = action.payload;
             state.loading = false;
         },
     },
@@ -33,7 +28,7 @@ const userInfoSlice = createSlice({
 
 export const { reset } = userInfoSlice.actions;
 
-export const selectUserInfo = (state) => state.searchUserInfo.userInfo;
+export const selectUserInfo = (state) => state.searchUserInfo.usersInfo;
 export const selectLoading = (state) => state.searchUserInfo.loading;
 
 export default userInfoSlice.reducer;

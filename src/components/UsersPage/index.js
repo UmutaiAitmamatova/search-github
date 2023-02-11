@@ -11,16 +11,16 @@ import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
 // import { selectUserData } from "../../api/SearchUsers/searchSlice";
-import { selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
+import { searchUserInfo, selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
 
 const UsersPage = () => {
   const dispatch = useDispatch();
-  dispatch(selectUserInfo());
-  const userInfo = useSelector(selectUserInfo);
+  dispatch(searchUserInfo());
+  const usersInfo = useSelector(selectUserInfo);
   const loading = useSelector(selectLoading);
 
   if (loading) return <p>Loading...</p>;
-  console.log('userInfo', userInfo);
+  console.log('userInfo', usersInfo);
   
 
   return (
@@ -29,10 +29,10 @@ const UsersPage = () => {
         <div className={classes.content}>
           <div className={classes.right}>
             <UserInfo
-              avatar_url={userInfo.avatar_url}
-              name={userInfo.name}
-              login={userInfo.login}
-              location={userInfo.location}
+              avatar_url={usersInfo.avatar_url}
+              name={usersInfo.name}
+              login={usersInfo.login}
+              location={usersInfo.location}
             />
           </div>
 

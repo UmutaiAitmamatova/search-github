@@ -13,10 +13,12 @@ function Header() {
     const dispatch = useDispatch();
     const { userInfoo } = useSelector((state) => state.userInfo);
     const [username, setUsername] = React.useState("");
+    const [isActive, setIsActive] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(searchGitHubUser(username));
+        setIsActive(true)
     };
 
     const userData = useSelector(selectUserData);
@@ -40,7 +42,7 @@ function Header() {
                                 />
                                 <button type="submit">Search</button>
                             </form>
-                            {userData && <Dropdown userData={userData.items}/>}
+                            {isActive && <Dropdown setIsActive={setIsActive} userData={userData.items}/>}
                         </div>
                     </div>
                     <div className={classes.left}>

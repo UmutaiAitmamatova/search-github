@@ -8,7 +8,6 @@ export const searchGitHubUser = createAsyncThunk(
         return response.data;
     }
 );
-
 const slice = createSlice({
     name: "searchGitHubUser",
     initialState: {
@@ -18,7 +17,6 @@ const slice = createSlice({
     reducers: {
         reset: (state) => {
             state.userData = null;
-            state.error = null;
         },
     },
     extraReducers: {

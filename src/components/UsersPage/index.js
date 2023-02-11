@@ -10,11 +10,18 @@ import { Link } from "react-router-dom";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
-import { selectUserData } from "../../api/SearchUsers/searchSlice";
+// import { selectUserData } from "../../api/SearchUsers/searchSlice";
+import { selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
 
 const UsersPage = () => {
-  const userData = useSelector(selectUserData);
-  console.log('userData', userData);
+  const dispatch = useDispatch();
+  dispatch(selectUserInfo());
+  const userInfo = useSelector(selectUserInfo);
+  const loading = useSelector(selectLoading);
+
+  if (loading) return <p>Loading...</p>;
+  console.log('userInfo', userInfo);
+  
 
   return (
     <div className={classes.MyPage}>
@@ -22,10 +29,10 @@ const UsersPage = () => {
         <div className={classes.content}>
           <div className={classes.right}>
             <UserInfo
-              avatar_url={userData.avatar_url}
-              name={userData.name}
-              login={userData.login}
-              location={userData.location}
+              avatar_url={userInfo.avatar_url}
+              name={userInfo.name}
+              login={userInfo.login}
+              location={userInfo.location}
             />
           </div>
 

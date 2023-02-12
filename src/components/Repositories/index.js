@@ -1,10 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchGitHubUserRepos, selectUserRepos } from '../../api/SearchUsers/searchUserReposSlice';
 import Repository from '../common/Repository';
 import Filters from '../Filters'
 
 function Repositories() {
     const { userRepos } = useSelector((state) => state.userRepos);
+    // const dispatch = useDispatch();
+    // dispatch(searchGitHubUserRepos());
+    // const usersRepos = useSelector(selectUserRepos);
+    // console.log('usersRepos', usersRepos);
     return (
         <div>
             <Filters />

@@ -1,27 +1,20 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import classes from "./UsersPage.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getUsersThunk,
-} from "../../api/UserInfo/user.thunk";
+import { useSelector } from "react-redux";
+
 import UserInfo from "../UserInfo";
 import { Link } from "react-router-dom";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
-// import { selectUserData } from "../../api/SearchUsers/searchSlice";
-import { searchUserInfo, selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
+import { selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
 
 const UsersPage = () => {
-  const dispatch = useDispatch();
-  dispatch(searchUserInfo());
   const usersInfo = useSelector(selectUserInfo);
   const loading = useSelector(selectLoading);
 
-  if (loading) return <p>Loading...</p>;
-  console.log('userInfo', usersInfo);
-  
+  if (loading) return <p>Loading...</p>;  
 
   return (
     <div className={classes.MyPage}>

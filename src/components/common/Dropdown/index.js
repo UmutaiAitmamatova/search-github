@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import classes from './Dropdown.module.scss';
 import { BiBook } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
-import { selectUserInfo } from "../../../api/SearchUsers/userInfoSlice";
+import { searchUserInfo } from "../../../api/SearchUsers/userInfoSlice";
 import { useDispatch } from "react-redux";
+import { searchGitHubUserRepos } from "../../../api/SearchUsers/searchUserReposSlice";
 
 const Dropdown = ({ userData, setIsActive }) => {
     const dispatch = useDispatch();
@@ -15,9 +16,9 @@ const Dropdown = ({ userData, setIsActive }) => {
                 return (
                     <div className={classes.content} onClick={() => {
                         navigate(`/user/${item.login}`)
-                        console.log('item.login', item.login);
                         setIsActive(false)
-                        dispatch(selectUserInfo(item.login));
+                        dispatch(searchUserInfo(item.login));
+                        // dispatch(searchGitHubUserRepos(item.login));
                     }}>
                         <BiBook />
                         <div>

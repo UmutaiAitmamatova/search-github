@@ -8,12 +8,16 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../../components/common/Dropdown';
 import { searchGitHubUser } from "../../api/SearchUsers/searchSlice";
 import { selectUserData, selectLoading } from "../../api/SearchUsers/searchSlice";
+import { searchGitHubUserRepos } from '../../api/SearchUsers/searchUserReposSlice';
 
 function Header() {
     const dispatch = useDispatch();
     const { userInfoo } = useSelector((state) => state.userInfo);
     const [username, setUsername] = React.useState("");
     const [isActive, setIsActive] = useState(false)
+    const userData = useSelector(selectUserData);
+    const loading = useSelector(selectLoading);
+    // dispatch(searchGitHubUserRepos(userData.items));
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,8 +25,7 @@ function Header() {
         setIsActive(true)
     };
 
-    const userData = useSelector(selectUserData);
-    const loading = useSelector(selectLoading);
+
 
     if (loading) return <p>Loading...</p>;
 

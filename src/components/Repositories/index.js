@@ -6,8 +6,7 @@ import Filters from '../Filters'
 
 function Repositories() {
     const { userRepos } = useSelector((state) => state.userRepos);
-    // const dispatch = useDispatch();
-    // dispatch(searchGitHubUserRepos());
+    const dispatch = useDispatch();
     // const usersRepos = useSelector(selectUserRepos);
     // console.log('usersRepos', usersRepos);
     return (

@@ -18,7 +18,6 @@ const Dropdown = ({ userData, setIsActive }) => {
                         navigate(`/user/${item.login}`)
                         setIsActive(false)
                         dispatch(searchUserInfo(item.login));
-                        // dispatch(searchGitHubUserRepos(item.login));
                     }}>
                         <BiBook />
                         <div>

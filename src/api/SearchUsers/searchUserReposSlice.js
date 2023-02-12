@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import https from "../https";
 
 export const searchGitHubUserRepos = createAsyncThunk(
-    "repositories",
+    "usersRepos",
     async (username) => {
         const response = await https.get(`/users/${username}/repos`);
         return response.data;
@@ -10,7 +10,7 @@ export const searchGitHubUserRepos = createAsyncThunk(
 );
 
 const repositoriesSlice = createSlice({
-    name: "repositories",
+    name: "usersRepos",
     initialState: {
         usersRepos: null,
         loading: false,

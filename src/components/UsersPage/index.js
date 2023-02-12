@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import classes from "./UsersPage.module.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import UserInfo from "../UserInfo";
 import { Link } from "react-router-dom";
@@ -9,10 +9,21 @@ import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
 import { selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
+import { searchGitHubUserRepos, selectUserRepos } from "../../api/SearchUsers/searchUserReposSlice";
 
 const UsersPage = () => {
   const usersInfo = useSelector(selectUserInfo);
   const loading = useSelector(selectLoading);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (usersInfo) {
+      dispatch(searchGitHubUserRepos(usersInfo.login))
+    }
+  }, [usersInfo])
+
+    const usersRepos = useSelector(selectUserRepos);
+    console.log('usersRepos', usersRepos);
 
   if (loading) return <p>Loading...</p>;  
 

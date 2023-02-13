@@ -1,43 +1,39 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import classes from "./MyPage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getFollowersThunk,
-  getFollowingThunk,
-  getMyStarReposThunk,
-  getUserReposThunk,
-  getUsersThunk,
-  userInfoThunk,
-} from "../../api/UserInfo/user.thunk";
 import UserInfo from "../UserInfo";
+import classes from "./MyPage.module.scss";
 import { Link } from "react-router-dom";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
+import { userInfoThunk } from "../../api/UserInfo/user.thunk";
+import { myFollowersThunk } from "../../api/myFollowers/myFollowers.thunk";
+import { myFollowingThunk } from "../../api/myFollowing/myFollowing.thunk";
+import { myReposThunk } from "../../api/myRepos/myRepos.thunk";
+import { myStarReposThunk } from "../../api/myStarRepos/myStarRepos.thunk";
 
 const MyPage = () => {
   const { userInfoo } = useSelector((state) => state.userInfo);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userInfoThunk());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getUserReposThunk());
+    dispatch(myReposThunk());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getFollowersThunk());
+    dispatch(myFollowersThunk());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getFollowingThunk());
+    dispatch(myFollowingThunk());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getMyStarReposThunk());
+    dispatch(myStarReposThunk());
   }, [dispatch]);
 
   return (
@@ -45,7 +41,7 @@ const MyPage = () => {
       <div className={classes.container}>
         <div className={classes.content}>
           <div className={classes.right}>
-            <UserInfo 
+            <UserInfo
               avatar_url={userInfoo.avatar_url}
               name={userInfoo.name}
               login={userInfoo.login}

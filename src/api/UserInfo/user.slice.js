@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFollowersThunk, getFollowingThunk, getMyStarReposThunk, getUserReposThunk, userInfoThunk, usersReposThunk } from "./user.thunk";
+import { userInfoThunk } from "./user.thunk";
 
 export const userInfoSlice = createSlice({
   name: "userInfo",
@@ -14,75 +14,5 @@ export const userInfoSlice = createSlice({
   },
 });
 
-export const userReposSlice = createSlice({
-  name: "userRepos",
-  userId: "",
-  initialState: {
-    userRepos: {},
-  },
-  extraReducers(builder) {
-    builder.addCase(getUserReposThunk.fulfilled, (state, action) => {
-      state.userRepos = action.payload;
-    });
-  },
-});
-
-
-export const myFollowingSlice = createSlice({
-  name: "myFollowing",
-  initialState: {
-    myFollowing: {},
-  },
-  reducers: {},
-  extraReducers(builder) {
-    builder.addCase(getFollowingThunk.fulfilled, (state, action) => {
-      state.myFollowing = action.payload;
-    });
-  },
-});
-
-export const myFollowersSlice = createSlice({
-  name: "myFollowers",
-  initialState: {
-    myFollowers: {},
-  },
-  reducers: {},
-  extraReducers(builder) {
-    builder.addCase(getFollowersThunk.fulfilled, (state, action) => {
-      state.myFollowers = action.payload;
-    });
-  },
-});
-
-export const myStarReposSlice = createSlice({
-  name: "myStarRepos",
-  initialState: {
-    myStarRepos: {},
-  },
-  reducers: {},
-  extraReducers(builder) {
-    builder.addCase(getMyStarReposThunk.fulfilled, (state, action) => {
-      state.myStarRepos = action.payload;
-    });
-  },
-});
-
-export const usersReposSlice = createSlice({
-  name: "usersRepos",
-  initialState: {
-    usersRepos: {},
-  },
-  reducers: {},
-  extraReducers(builder) {
-    builder.addCase(usersReposThunk.fulfilled, (state, action) => {
-      state.usersRepos = action.payload;
-    });
-  },
-});
-
 export const userInfoReducer = userInfoSlice.reducer;
-export const myFollowingReducer = myFollowingSlice.reducer;
-export const myFollowersReducer = myFollowersSlice.reducer;
-export const myStarReposReducer = myStarReposSlice.reducer;
-export const userPeposReducer = userReposSlice.reducer;
-export const usersPeposReducer = usersReposSlice.reducer;
+

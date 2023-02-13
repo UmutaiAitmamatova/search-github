@@ -1,17 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { usersReposThunk } from '../../api/UserInfo/user.thunk';
 import Repository from '../common/Repository';
 import Filters from '../Filters'
 
-function Repositories() {
-    const { myRepos } = useSelector((state) => state.myRepos);
-
+function UsersRepositories() {
+    const dispatch = useDispatch()
+    const { usersRepos } = useSelector((state) => state.usersRepos);
+    console.log('Repos', usersRepos);
     return (
         <div>
-            <Filters myRepos={myRepos}/>
-            {myRepos.length > 0 && (
+            <Filters usersRepos={usersRepos}/>
+            {usersRepos.length > 0 && (
                 <div>
-                    {myRepos.map((el, index) => (
+                    {usersRepos.map((el, index) => (
                         <Repository 
                             key={index} 
                             name={el.name}
@@ -26,4 +28,4 @@ function Repositories() {
     )
 }
 
-export default Repositories
+export default UsersRepositories

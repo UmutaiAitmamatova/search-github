@@ -1,15 +1,30 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { searchGitHubUserRepos, selectUserRepos } from '../../api/SearchUsers/searchUserReposSlice';
+import { useSelector } from 'react-redux';
 import Repository from '../common/Repository';
 import Filters from '../Filters'
 
-function Repositories() {
-    const { userRepos } = useSelector((state) => state.userRepos);
-    const dispatch = useDispatch();
-    // const usersRepos = useSelector(selectUserRepos);
-    // console.log('usersRepos', usersRepos);
+function Repositories({ userRepos, usersRepos, mypage, users }) {
+    console.log('usersRepos', usersRepos);
+
     return (
+        users ? 
+        <div>
+            <Filters />
+            {usersRepos.length > 0 && (
+                <div>
+                    {usersRepos.map((el, index) => (
+                        <Repository 
+                            key={index} 
+                            name={el.name}
+                            language={el.language}
+                            updated_at={el.updated_at} 
+                            visibility={el.visibility}
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+        : 
         <div>
             <Filters />
             {userRepos.length > 0 && (
@@ -21,7 +36,7 @@ function Repositories() {
                             language={repos.language}
                             updated_at={repos.updated_at} 
                             visibility={repos.visibility}
-                            />
+                        />
                     ))}
                 </div>
             )}

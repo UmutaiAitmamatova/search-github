@@ -52,3 +52,19 @@ export const getMyStarReposThunk = createAsyncThunk("myStarReposThunk", async ()
   }
   return response.data;
 });
+
+export const usersReposThunk = createAsyncThunk("usersReposThunk", async (username) => {
+  const response = await https.get(
+    `/users/${username}/repos`
+  );
+  if (!response.status) {
+    throw new Error("Server error");
+  }
+  return response.data;
+});
+
+
+// async (username) => {
+//   const response = await https.get(`/users/${username}/repos`);
+//   return response.data;
+// }

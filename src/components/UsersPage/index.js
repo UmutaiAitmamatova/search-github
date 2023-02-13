@@ -9,7 +9,7 @@ import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineStar } from "react-icons/ai";
 import { SlUserFollowing } from "react-icons/sl";
 import { selectLoading, selectUserInfo } from "../../api/SearchUsers/userInfoSlice";
-import { searchGitHubUserRepos, selectUserRepos } from "../../api/SearchUsers/searchUserReposSlice";
+import { usersReposThunk } from "../../api/UserInfo/user.thunk";
 
 const UsersPage = () => {
   const usersInfo = useSelector(selectUserInfo);
@@ -17,13 +17,13 @@ const UsersPage = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (usersInfo) {
-      dispatch(searchGitHubUserRepos(usersInfo.login))
+    if(usersInfo){
+      dispatch(usersReposThunk(usersInfo.login));
     }
-  }, [usersInfo])
+  }, [usersInfo]);
 
-    const usersRepos = useSelector(selectUserRepos);
-    console.log('usersRepos', usersRepos);
+  const { usersRepos } = useSelector((state) => state.usersRepos);
+  console.log('usersRepos', usersRepos);
 
   if (loading) return <p>Loading...</p>;  
 

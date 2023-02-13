@@ -4,7 +4,6 @@ import { BiBook } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 import { searchUserInfo } from "../../../api/SearchUsers/userInfoSlice";
 import { useDispatch } from "react-redux";
-import { searchGitHubUserRepos } from "../../../api/SearchUsers/searchUserReposSlice";
 
 const Dropdown = ({ userData, setIsActive }) => {
     const dispatch = useDispatch();

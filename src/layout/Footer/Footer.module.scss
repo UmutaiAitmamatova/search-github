@@ -24,3 +24,22 @@ nav{
 .links:hover{
     text-decoration:underline;
 }
+
+@media screen and (max-width: 790px){
+    .block{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    nav{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 490px){
+    nav{
+        width: 30%;
+        display: block;
+        justify-content: space-between;
+    }
+}

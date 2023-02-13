@@ -32,14 +32,14 @@ function Header() {
                     <div className={classes.right}>
                         <div><BsGithub size={32} /></div>
                         <div className={classes.search}>
-                            <form onSubmit={handleSubmit}>
+                            <form className={classes.forms} onSubmit={handleSubmit}>
                                 <input
                                     type="text"
                                     placeholder='Search or jump to...'
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
-                                <button type="submit">Search</button>
+                                <button className={classes.btn} type="submit">Search</button>
                             </form>
                             {isActive && <Dropdown setIsActive={setIsActive} userData={userData.items}/>}
                         </div>

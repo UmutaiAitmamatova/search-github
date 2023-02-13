@@ -12,9 +12,12 @@ header{
     align-items: center;
 }
 .right{
-    width: 30%;
+    width: 250px;
     display: flex;
     align-items: center;  
+}
+.forms{
+    display: flex;
 }
 .search input{
     height: 25px;
@@ -47,10 +50,42 @@ header{
     width: 45px;
     border-radius: 50%;
 }
-// .dropdown{
-//     display: flex;
+@media screen and (max-width: 990px){
+    .right{
 
-// }
-//button 1C6B2B
-// input 0A0E12
-// repazitori 0A0E12
+        // width: 60%;  
+    }
+    .search{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 790px){
+    .block{
+        height: 110px;
+    }
+    .forms{
+        display: flex;
+        align-items: flex-end;
+    }
+    .btn{
+        height: 27px;
+    }
+    .search input{
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .right{
+        display: block;
+        margin: 0 auto;  
+    }
+    .search{
+        width: 50%;
+    }
+    .left{
+        margin-top: 10px;
+        height: 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}

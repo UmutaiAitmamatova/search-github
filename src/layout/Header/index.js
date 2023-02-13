@@ -23,8 +23,6 @@ function Header() {
         setIsActive(true)
     };
 
-
-
     if (loading) return <p>Loading...</p>;
 
     return (

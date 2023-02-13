@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import Repository from '../common/Repository';
 import Filters from '../Filters'
 
 function Repositories() {
     const { myRepos } = useSelector((state) => state.myRepos);
-
+    const [activeFilter, setActiveFilter] = useState('all');
     return (
         <div>
-            <Filters myRepos={myRepos}/>
+            <Filters setActiveFilter={setActiveFilter}/>
             {myRepos.length > 0 && (
                 <div>
-                    {myRepos.map((el, index) => (
+                    {myRepos.filter((elem) => activeFilter === 'all' ? true : elem.language === activeFilter).map((el, index) => (
                         <Repository 
                             key={index} 
                             name={el.name}
@@ -25,5 +25,4 @@ function Repositories() {
         </div>
     )
 }
-
-export default Repositories
+export default Repositories;

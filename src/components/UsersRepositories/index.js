@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { usersReposThunk } from '../../api/UserInfo/user.thunk';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import Repository from '../common/Repository';
 import Filters from '../Filters'
 
 function UsersRepositories() {
-    const dispatch = useDispatch()
     const { usersRepos } = useSelector((state) => state.usersRepos);
-    console.log('Repos', usersRepos);
+    const [activeFilter, setActiveFilter] = useState('all');
     return (
         <div>
-            <Filters usersRepos={usersRepos}/>
+            <Filters setActiveFilter={setActiveFilter}/>
             {usersRepos.length > 0 && (
                 <div>
-                    {usersRepos.map((el, index) => (
+                    {usersRepos.filter((elem) => activeFilter === 'all' ? true : elem.language === activeFilter).map((el, index) => (
                         <Repository 
                             key={index} 
                             name={el.name}
@@ -27,5 +25,4 @@ function UsersRepositories() {
         </div>
     )
 }
-
 export default UsersRepositories

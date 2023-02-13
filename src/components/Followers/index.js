@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Follow from "../common/Follow";
 
 function Followers() {
@@ -14,6 +15,7 @@ function Followers() {
                             img={follow.avatar_url}
                             name={follow.login}
                         />
+                        
                     ))}
                 </div>
             )}

@@ -23,13 +23,13 @@ const UsersPage = () => {
   }
 
   useEffect(() => {
-    if(usersInfo){
+    if (usersInfo) {
       dispatch(usersReposThunk(username));
     }
   }, [usersInfo]);
 
   useEffect(() => {
-    if(usersInfo){
+    if (usersInfo) {
       dispatch(usersReposThunk(username));
     }
   }, [usersInfo]);
@@ -46,7 +46,7 @@ const UsersPage = () => {
     dispatch(usersFollowingThunk(username));
   }, [usersInfo]);
 
-  if (loading) return <p>Loading...</p>;  
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className={classes.MyPage}>
@@ -64,33 +64,39 @@ const UsersPage = () => {
           <div className={classes.left}>
             <div className={classes.page}>
               <div className={classes.top}>
-              <Link to={`${username}/usersRepos`}>
-                <div className={classes.repositories}>
-                  <RiGitRepositoryLine />
-                  <span>Repositories</span>
-                </div>
-              </Link>
-              <Link to={`${username}/usersStar`}>
-                <div className={classes.repositories}>
-                  <AiOutlineStar />
-                  <span>Star</span>
-                </div>
-              </Link>
+                <Link to={`${username}/`}>
+                  <div className={classes.repositories}>
+                    <RiGitRepositoryLine />
+                    <span>Overview</span>
+                  </div>
+                </Link>
+                <Link to={`${username}/usersRepos`}>
+                  <div className={classes.repositories}>
+                    <RiGitRepositoryLine />
+                    <span>Repositories</span>
+                  </div>
+                </Link>
+                <Link to={`${username}/usersStar`}>
+                  <div className={classes.repositories}>
+                    <AiOutlineStar />
+                    <span>Star</span>
+                  </div>
+                </Link>
               </div>
 
               <div className={classes.bottom}>
-              <Link to={`${username}/usersFollower`}>
-                <div className={classes.repositories}>
-                  <SlUserFollowing />
-                  <span>Follower</span>
-                </div>
-              </Link>
-              <Link to={`${username}/usersFollowing`}>
-                <div className={classes.repositories}>
-                  <SlUserFollowing />
-                  <span>Following</span>
-                </div>
-              </Link>
+                <Link to={`${username}/usersFollower`}>
+                  <div className={classes.repositories}>
+                    <SlUserFollowing />
+                    <span>Follower</span>
+                  </div>
+                </Link>
+                <Link to={`${username}/usersFollowing`}>
+                  <div className={classes.repositories}>
+                    <SlUserFollowing />
+                    <span>Following</span>
+                  </div>
+                </Link>
               </div>
             </div>
 

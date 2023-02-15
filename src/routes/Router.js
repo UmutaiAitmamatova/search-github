@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import StarRepos from '../components/common/StarRepository'
 import Followers from '../components/Followers'
 import Following from '../components/Following'
+import Overview from '../components/Overview'
 import Repositories from '../components/Repositories'
 import UsersFollower from '../components/UsersFollower'
 import UsersFollowing from '../components/UsersFollowing'
@@ -18,13 +19,15 @@ function Router() {
         <>
             <Header/>
             <Routes>
-                <Route path='/*' element={<Home />} >
-                <Route path="repos" element={<Repositories/>} />
+                <Route path='/' element={<Home />} >
+                    <Route path="/" element={<Overview/>} />
+                    <Route path="repos" element={<Repositories/>} />
                     <Route path="star" element={<StarRepos />} />
                     <Route path="following" element={<p><Following/></p>} />
                     <Route path="follower" element={<p><Followers/></p>} />
                 </Route>
                 <Route path='user/*' element={<User />}>
+                    <Route path=":username/" element={<Overview />} />
                     <Route path=":username/usersRepos" element={<UsersRepositories />} />
                     <Route path=":username/usersStar" element={<UsersStarRepositories/>} />
                     <Route path=":username/usersFollowing" element={<p><UsersFollowing/></p>} />

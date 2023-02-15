@@ -52,39 +52,39 @@ const MyPage = () => {
           <div className={classes.left}>
             <div className={classes.page}>
               <div className={classes.top}>
-              <Link to="repos">
-                <div className={classes.repositories}>
-                  <RiGitRepositoryLine />
-                  <span>Repositories</span>
-                </div>
-              </Link>
-              <Link to="repos">
-                <div className={classes.repositories}>
-                  <RiGitRepositoryLine />
-                  <span>Repositories</span>
-                </div>
-              </Link>
-              <Link to="star">
-                <div className={classes.repositories}>
-                  <AiOutlineStar />
-                  <span>Star</span>
-                </div>
-              </Link>
+                <Link to="/">
+                  <div className={classes.repositories}>
+                    <RiGitRepositoryLine />
+                    <span>Overview</span>
+                  </div>
+                </Link>
+                <Link to="repos">
+                  <div className={classes.repositories}>
+                    <RiGitRepositoryLine />
+                    <span>Repositories</span>
+                  </div>
+                </Link>
+                <Link to="star">
+                  <div className={classes.repositories}>
+                    <AiOutlineStar />
+                    <span>Star</span>
+                  </div>
+                </Link>
               </div>
 
               <div className={classes.bottom}>
-              <Link to="follower">
-                <div className={classes.repositories}>
-                  <SlUserFollowing />
-                  <span>Follower</span>
-                </div>
-              </Link>
-              <Link to="following">
-                <div className={classes.repositories}>
-                  <SlUserFollowing />
-                  <span>Following</span>
-                </div>
-              </Link>
+                <Link to="follower">
+                  <div className={classes.repositories}>
+                    <SlUserFollowing />
+                    <span>Follower</span>
+                  </div>
+                </Link>
+                <Link to="following">
+                  <div className={classes.repositories}>
+                    <SlUserFollowing />
+                    <span>Following</span>
+                  </div>
+                </Link>
               </div>
             </div>
             <Outlet />

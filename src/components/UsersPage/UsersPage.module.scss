@@ -1,27 +1,20 @@
-.MyPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
 .container{
     max-width: 1200px;
     margin: 0 auto;
 }
 .content{
-    width: 1000px;
+    width: 100%;
     display: flex;
     min-height: calc(100vh - 120px);
 }
 .left{
-    width: 50%;
+    width: 90%;
     margin-left: 30px;
     margin-top: 20px;
 }
 .page{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid #363A3D;
     padding-bottom: 20px;
 }
@@ -33,40 +26,47 @@
     font-size: 18px;
     text-decoration: none;
 }
+.top{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.bottom{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
 .repositories span{
-    padding-left: 10px;
+    margin-left: 10px;
+    padding-right: 10px;
     font-size: 16px;
     text-decoration: none;
+    border-right: 1.5px solid #363A3D;
 }
-
-
-@media screen and (max-width: 1010px){
-    .content{
-        width: 890px;
-    }
-    .left{
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 890px){
-    .content{
-        width: 790px;
-    }
-    .left{
-        width: 45%;
-    }
-}
-
 @media screen and (max-width: 790px){
     .content{
-        width: 350px;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
     }
     .left{
         width: 100%;
-        margin-top: 100px;
+        margin-left: 0;
+    }
+    .page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 490px){
+    .top{
+        display: block;
+    }
+    .bottom{
+        display: block;
+    }
+    .repositories{
+        padding-top: 10px;
     }
 }

@@ -5,8 +5,6 @@
 }
 .UserInfo{
     padding: 20px;
-    height: calc(var(--index) * 25);
-    width: calc(var(--index) * 18);
     border-right: 1px solid #363A3D;
 }
 .img{
@@ -43,4 +41,49 @@ span{
 }
 .location span{
     font-size: 16px;
+}
+.loc_logo{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 790px){
+    .UserInfo{
+        border-right: none;
+        display: flex;
+        border-bottom: 1px solid #363A3D;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 15px;
+    }
+    
+}
+@media screen and (max-width: 490px){
+    .img{
+        height: calc(var(--index) * 10);
+        width: calc(var(--index) * 10);
+    }
+    .nickname{
+        margin-top: 6px;
+        font-size: calc(var(--index) * 1.1);
+    }
+    .fullname{
+        margin-top: 4px;
+        font-size: calc(var(--index) * .8);
+    }
+    .loc_logo{
+        font-size: 13px;
+    }
+    .location span{
+        font-size: 11px;
+    }
+    
+}
+@media screen and (max-width: 320px){
+    .img{
+        height: calc(var(--index) * 6);
+        width: calc(var(--index) * 6);
+    }
 }

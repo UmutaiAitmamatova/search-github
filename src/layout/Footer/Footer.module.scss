@@ -12,9 +12,10 @@ footer{
     align-items: center;
 }
 nav{
-    width: 70%;
+    width: 250px;
     display: flex;
     justify-content: space-between;
+
 }
 .links{
     color: #3081df;
@@ -29,7 +30,6 @@ nav{
     .block{
         width: 70%;
         display: block;
-        margin: 0 auto;
         margin-top: 15px;
     }
     nav{
@@ -38,8 +38,9 @@ nav{
 }
 @media screen and (max-width: 490px){
     nav{
-        width: 30%;
-        display: block;
+        // width: 30%;
+        display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 }

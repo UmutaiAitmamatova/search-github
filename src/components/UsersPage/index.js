@@ -63,6 +63,7 @@ const UsersPage = () => {
 
           <div className={classes.left}>
             <div className={classes.page}>
+              <div className={classes.top}>
               <Link to={`${username}/usersRepos`}>
                 <div className={classes.repositories}>
                   <RiGitRepositoryLine />
@@ -75,6 +76,9 @@ const UsersPage = () => {
                   <span>Star</span>
                 </div>
               </Link>
+              </div>
+
+              <div className={classes.bottom}>
               <Link to={`${username}/usersFollower`}>
                 <div className={classes.repositories}>
                   <SlUserFollowing />
@@ -87,6 +91,7 @@ const UsersPage = () => {
                   <span>Following</span>
                 </div>
               </Link>
+              </div>
             </div>
 
             <Outlet />

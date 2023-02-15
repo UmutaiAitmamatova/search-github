@@ -12,7 +12,7 @@ header{
     align-items: center;
 }
 .right{
-    width: 250px;
+    // width: 250px;
     display: flex;
     align-items: center;  
 }
@@ -36,12 +36,6 @@ header{
     position: relative;
     display: inline-block;
 }
-.left{
-    width: 130px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .drop{
     display: flex;
     align-items: center;
@@ -51,10 +45,6 @@ header{
     border-radius: 50%;
 }
 @media screen and (max-width: 990px){
-    .right{
-
-        // width: 60%;  
-    }
     .search{
         width: 50%;
     }
@@ -62,6 +52,7 @@ header{
 @media screen and (max-width: 790px){
     .block{
         height: 110px;
+
     }
     .forms{
         display: flex;
@@ -76,13 +67,14 @@ header{
     }
     .right{
         display: block;
-        margin: 0 auto;  
+        margin-left: 10px; 
     }
     .search{
-        width: 50%;
+        width: 90px;
     }
     .left{
-        margin-top: 10px;
+        margin-right: 10px; 
+        margin-top: 30px;
         height: 110px;
         display: flex;
         justify-content: space-between;

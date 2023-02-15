@@ -51,6 +51,13 @@ const MyPage = () => {
 
           <div className={classes.left}>
             <div className={classes.page}>
+              <div className={classes.top}>
+              <Link to="repos">
+                <div className={classes.repositories}>
+                  <RiGitRepositoryLine />
+                  <span>Repositories</span>
+                </div>
+              </Link>
               <Link to="repos">
                 <div className={classes.repositories}>
                   <RiGitRepositoryLine />
@@ -63,6 +70,9 @@ const MyPage = () => {
                   <span>Star</span>
                 </div>
               </Link>
+              </div>
+
+              <div className={classes.bottom}>
               <Link to="follower">
                 <div className={classes.repositories}>
                   <SlUserFollowing />
@@ -75,8 +85,8 @@ const MyPage = () => {
                   <span>Following</span>
                 </div>
               </Link>
+              </div>
             </div>
-
             <Outlet />
           </div>
         </div>

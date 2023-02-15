@@ -9,18 +9,19 @@ function UserInfo({avatar_url, name, login, location }) {
         <img
           alt='AVATAR'
           src={avatar_url}
-          style={{ borderRadius: "50%", width: "330px" }}
+          className={classes.img}
         />
       </div>
-      <div className={classes.nickname}>{name}</div>
-      <div className={classes.fullname}>{login}</div>
-
-      <div className={classes.location}>
-          <HiOutlineLocationMarker size={20}/> <span>{location}</span>
+      <div className={classes.info}>
+        <div className={classes.nickname}>{name}</div>
+        <div className={classes.fullname}>{login}</div>
+        <div className={classes.location}>
+          <HiOutlineLocationMarker className={classes.loc_logo}/> <span>{location}</span>
         </div>
+      </div>
 
     </div>
   );
 }
-
+ 
 export default UserInfo;

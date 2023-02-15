@@ -4,7 +4,7 @@
     margin: 20px 0;
     border: 1.5px solid #363A3D;
     height: 100px;
-    width: 300px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
@@ -16,4 +16,15 @@
     padding-top: 5px;
     font-size: 12px;
     color: #8B949C;
+}
+@media screen and (max-width: 490px){
+    .repositories{
+        margin-left: 15px;
+    }
+}
+@media screen and (max-width: 320px){
+    .repositories{
+        margin-left: 5px;
+        width: 250px;
+    }
 }

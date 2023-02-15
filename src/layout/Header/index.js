@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classes from './Header.module.scss';
 import { BsGithub } from 'react-icons/bs'
-import { MdNotificationsNone, MdArrowDropDown, MdArrowDropUp } from 'react-icons/md'
-import { AiOutlinePlus } from 'react-icons/ai'
+import { MdArrowDropDown } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Dropdown from '../../components/common/Dropdown';
@@ -44,9 +43,8 @@ function Header() {
                             {isActive && <Dropdown setIsActive={setIsActive} userData={userData.items}/>}
                         </div>
                     </div>
+                    
                     <div className={classes.left}>
-                        <div><MdNotificationsNone size={22} /></div>
-                        <div className={classes.drop}><div><AiOutlinePlus /></div> <MdArrowDropDown /></div>
                         <Link to='/'><div className={classes.drop}> <div> <img src={userInfoo.avatar_url} alt="AVATAR" className={classes.img} /> </div> <MdArrowDropDown /> </div></Link>
                     </div>
                 </div>

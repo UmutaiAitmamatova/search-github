@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+// import { Link } from 'react-router-dom';
 import Repository from '../common/Repository';
 
 function Overview() {
@@ -21,6 +22,8 @@ function Overview() {
             ))}
         </div>
     )}
+
+    {/* <Link to='repos'><button>All repositories</button></Link> */}
 </div>
   )
 }

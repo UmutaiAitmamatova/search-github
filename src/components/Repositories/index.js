@@ -5,14 +5,14 @@ import Filters from '../Filters'
 
 function Repositories() {
     const { myRepos } = useSelector((state) => state.myRepos);
-    const [activeFilter, setActiveFilter] = useState('all');
-    
+    const [activeFilter, setActiveFilter] = useState('all');  
+    const [pagination, setPagination] = useState(1);  
     return (
         <div>
             <Filters setActiveFilter={setActiveFilter}/>
             {myRepos.length > 0 && (
                 <div>
-                    {myRepos.filter((elem) => activeFilter === 'all' ? true : elem.language === activeFilter).map((el, index) => (
+                    {myRepos.filter((elem) => activeFilter === 'all' ? true : elem.language === activeFilter).slice(0,pagination*4).map((el, index) => (
                         <Repository 
                             key={index} 
                             name={el.name}
@@ -23,6 +23,7 @@ function Repositories() {
                     ))}
                 </div>
             )}
+            <button onClick={()=> setPagination(pagination+1)}>more</button>
         </div>
     )
 }

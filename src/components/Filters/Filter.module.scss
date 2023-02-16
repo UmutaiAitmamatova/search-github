@@ -1,18 +1,7 @@
 .filter{
     display: flex;
     align-items: end;
-}
-.filter input{
-    width: 30%;
-    height: 25px;
-    border: 1.5px solid #363A3D;
-    border-radius: 5px;
-    background-color: #0A0E12;
-    color: #d8d8d2;
-    padding: 0 15px;
-}
-.filter input:hover{
-    border: none;
+    margin-left: 15px;
 }
 select{
     height: 30px;
@@ -20,9 +9,6 @@ select{
     background-color: #12161B;
     color: #d8d8d2;
     border: none;
-}
-.type{
-    margin: 0 10px;
 }
 span{
     color: #d8d8d2;

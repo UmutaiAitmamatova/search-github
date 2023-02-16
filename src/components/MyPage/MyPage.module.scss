@@ -55,8 +55,8 @@
     }
     .page{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 }
 @media screen and (max-width: 490px){
@@ -65,10 +65,13 @@
     }
     .bottom{
         display: block;
-        align-items: flex-start;
-        justify-content: start;
     }
     .repositories{
         padding-top: 10px;
+    }
+    .repositories span{
+        padding-bottom: 5px;
+        border-right: none;
+        border-bottom: 1.5px solid #363A3D;
     }
 }

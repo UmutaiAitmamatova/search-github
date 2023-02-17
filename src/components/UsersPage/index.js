@@ -46,7 +46,7 @@ const UsersPage = () => {
     dispatch(usersFollowingThunk(username));
   }, [usersInfo]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className={classes.loading}>Loading...</p>;
 
   return (
     <div className={classes.MyPage}>

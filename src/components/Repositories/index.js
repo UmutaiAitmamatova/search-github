@@ -23,7 +23,7 @@ function Repositories() {
                     ))}
                 </div>
             )}
-            <button onClick={()=> setPagination(pagination+1)}>more</button>
+            <button onClick={()=> setPagination(pagination+1)} style={{backgroundColor: '#363A3D', color: '#d8d8d2', padding: '6px 15px', borderRadius: '5px', marginBottom: '20px', marginTop: '10px'}}>more</button>
         </div>
     )
 }

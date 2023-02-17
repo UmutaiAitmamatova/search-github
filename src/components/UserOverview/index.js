@@ -2,15 +2,15 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import Repository from '../common/Repository';
 
-function Overview() {
-  const { myRepos } = useSelector((state) => state.myRepos);
+function UserOverview() {
+  const { usersRepos } = useSelector((state) => state.usersRepos);
 
   return (
     <div>
       <h2>Popular repositories</h2>
-      {myRepos.length > 0 && (
+      {usersRepos.length > 0 && (
         <div>
-          {myRepos.slice(0, 4).map((el, index) => (
+          {usersRepos.slice(0, 4).map((el, index) => (
             <Repository
               key={index}
               name={el.name}
@@ -25,4 +25,4 @@ function Overview() {
   )
 }
 
-export default Overview;
+export default UserOverview;

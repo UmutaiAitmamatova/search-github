@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../../components/common/Dropdown';
 import { searchGitHubUser } from "../../api/SearchUsers/searchSlice";
 import { selectUserData, selectLoading } from "../../api/SearchUsers/searchSlice";
+import debounce from 'lodash/debounce';
+import { useCallback } from 'react';
 
 function Header() {
     const dispatch = useDispatch();
@@ -15,14 +17,16 @@ function Header() {
     const [isActive, setIsActive] = useState(false)
     const userData = useSelector(selectUserData);
     const loading = useSelector(selectLoading);
+    const delayedDispatch = useCallback(debounce((searchTerm) => {
+        dispatch(searchGitHubUser(searchTerm));
+        setIsActive(true)
+    }, 500), [dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(searchGitHubUser(username));
-        setIsActive(true)
+        delayedDispatch(username);
+        setUsername("");
     };
-
-    if (loading) return <p>Loading...</p>;
 
     return (
         <header>
@@ -30,6 +34,7 @@ function Header() {
                 <div className={classes.block}>
                     <div className={classes.right}>
                         <div><BsGithub size={32} /></div>
+
                         <div className={classes.search}>
                             <form className={classes.forms} onSubmit={handleSubmit}>
                                 <input
@@ -40,18 +45,22 @@ function Header() {
                                 />
                                 <button className={classes.btn} type="submit">Search</button>
                             </form>
-                            {isActive && <Dropdown setIsActive={setIsActive} userData={userData.items}/>}
+                            {isActive && userData && userData.items ? (
+                                <Dropdown setIsActive={setIsActive} userData={userData.items} />
+                            ) : loading ? (
+                                <p className={classes.loading}>Loading...</p>
+                            ) : null}
                         </div>
+
                     </div>
-                    
+
                     <div className={classes.left}>
-                        <Link to='/'><div className={classes.drop}> <div> <img src={userInfoo.avatar_url} alt="AVATAR" className={classes.img} /> </div> <MdArrowDropDown /> </div></Link>
+                        <Link to='/'><div onClick={()=> setIsActive(false)} className={classes.drop}> <div> <img src={userInfoo.avatar_url} alt="AVATAR" className={classes.img} /> </div> <MdArrowDropDown /> </div></Link>
                     </div>
                 </div>
             </div>
         </header>
-    )
-    
+    );
 }
 
-export default Header
+export default Header;

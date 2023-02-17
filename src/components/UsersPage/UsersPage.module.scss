@@ -43,9 +43,13 @@
     text-decoration: none;
     border-right: 1.5px solid #363A3D;
 }
-// .loading{
-//     text-align: center;
-// }
+.loading{
+    color: #A1A7AE;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media screen and (max-width: 790px){
     .content{
         display: flex;

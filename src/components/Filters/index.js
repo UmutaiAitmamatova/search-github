@@ -11,6 +11,10 @@ function Filters({ setActiveFilter }) {
           <option value="HTML">HTML</option>
           <option value="JavaScript">JavaScript</option>
           <option value="SCSS">SCSS</option>
+          <option value="Python">Python</option>
+          <option value="C++">C++</option>
+          <option value="C">C</option>
+          <option value="Go">Go</option>
         </select>
       </div>
     </div>

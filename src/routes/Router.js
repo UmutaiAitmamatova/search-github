@@ -5,6 +5,7 @@ import Followers from '../components/Followers'
 import Following from '../components/Following'
 import Overview from '../components/Overview'
 import Repositories from '../components/Repositories'
+import UserOverview from '../components/UserOverview'
 import UsersFollower from '../components/UsersFollower'
 import UsersFollowing from '../components/UsersFollowing'
 import UsersRepositories from '../components/UsersRepositories'
@@ -12,7 +13,7 @@ import UsersStarRepositories from '../components/UsersStarRepositories'
 import Footer from '../layout/Footer'
 import Header from '../layout/Header'
 import Home from '../pages/home'
-import User from '../pages/user'
+import User from '../pages/user';
 
 function Router() {
     return (
@@ -27,7 +28,7 @@ function Router() {
                     <Route path="follower" element={<p><Followers/></p>} />
                 </Route>
                 <Route path='user/*' element={<User />}>
-                    <Route path=":username/" element={<Overview />} />
+                    <Route path=":username/" element={<UserOverview/>} />
                     <Route path=":username/usersRepos" element={<UsersRepositories />} />
                     <Route path=":username/usersStar" element={<UsersStarRepositories/>} />
                     <Route path=":username/usersFollowing" element={<p><UsersFollowing/></p>} />

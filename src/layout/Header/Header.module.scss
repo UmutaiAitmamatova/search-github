@@ -39,10 +39,23 @@ header{
 .drop{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .img{
     width: 45px;
     border-radius: 50%;
+}
+.loading{
+    position: absolute;
+    top: 20px;
+    color: #d8d8d2;
+}
+.btn{
+    border-color: #d8d8d2;
+    color: #12161B;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
 @media screen and (max-width: 990px){
     .search{
@@ -67,7 +80,8 @@ header{
     }
     .right{
         display: block;
-        margin-left: 10px; 
+        margin-left: 10px;
+
     }
     .search{
         width: 90px;
